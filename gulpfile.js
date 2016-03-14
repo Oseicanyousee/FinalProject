@@ -78,4 +78,6 @@ gulp.task('watch', function(){
 //////// Default task //////////
 ////////////////////////////////
 
-gulp.task('default', ['scripts', 'stylus', 'html', 'browser-sync', 'watch']);
+gulp.task('default', ['stylus', 'html', 'browser-sync', 'watch']);
+
+// add scripts back in when done
