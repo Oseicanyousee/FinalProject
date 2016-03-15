@@ -79,11 +79,10 @@ gulp.task('watch', function(){
 ////////////////////////////////
 
 gulp.task('default', ['stylus', 'html', 'browser-sync', 'watch']);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+HEAD
+HEAD
 
 // add scripts back in when done
-=======
->>>>>>> 876e8f902a4b4fc9ab451237286facd90bf11246
->>>>>>> 915a96fadafe9c1a6d8bca4107bc851613060513
+
+876e8f902a4b4fc9ab451237286facd90bf11246
+915a96fadafe9c1a6d8bca4107bc851613060513
