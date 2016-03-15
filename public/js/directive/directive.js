@@ -2,14 +2,13 @@ angular.module('tourApp')
 	.directive('selfieMap', function(){
 		return {
 			restrict: "E",
-			templateUrl: "../myQuest.html",
-			replace: false,
+			templateUrl: "public/views/myQuest.html",
+			// template:'<h1>hi mom</h1>',
+			replace: true,
 			link: function(scope, element, attrs){
 				element.css(
 					{
-						width: '200px',
-						height: '200px',
-						border: '2px solid green'
+						display: 'inline'
 					}
 				);
 			}
