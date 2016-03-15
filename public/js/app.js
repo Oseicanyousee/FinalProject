@@ -1,10 +1,10 @@
 var app = angular.module('tourApp', ['ngRoute']);
 
 app.config(function($routeProvider){
-  // $routeProvider.when('/', {
-  //   templateUrl: '../index.html',
-  //   controller: 'indexControl'
-  // });
+   $routeProvider.when('/', {
+     templateUrl: 'public/views/home.html',
+     controller: 'indexControl'
+   });
 
   $routeProvider.when('/view2', {
     templateUrl: 'public/views/newView.html',
