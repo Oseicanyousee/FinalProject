@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Project</title>
+		<link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css" />
+
+	<link rel="stylesheet" type="text/css" href="public/styles/styles.css">
+
+</head>
+<body ng-app="tourApp">
+	<h1>Hello</h1>
+	<nav>
+	<ul>
+		<li><a href="#/">Home</a></li>
+		<li><a href="#/view2">Adventure List</a></li>
+		<li><a href="#/view3">Adventure Details</a></li>
+		<li><a href="#/view4">Route to Goal</a></li>
+		<li><a href="#/view5">Reward</a></li>
+	</ul>
+	</nav>
+	<ng-view></ng-view>
+
+
+
+
+
+
+
+<!-- pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw
+Mapbox API Token -->
+
+
+<!-- sk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsdXkzeGJjMDFmeXRpa3JoMzZtMmxxNiJ9.vyL9rca1iHMZdW6asm6KWw
+ SECRET MAPBOX TOKEN-->
+<!-- lgod-tom.pdn1c00d -->
+
+<script data-require="angular.js@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<script data-require="angular-route@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+<script type="text/javascript" src="./public/js/app.js"></script>
+<script type="text/javascript" src="/public/js/fbApp.js"></script>
+<script type="text/javascript" src="/public/js/controllers/indexControl.js"></script>
+<script type="text/javascript" src="/public/js/controllers/controller.js"></script>
+<script type="text/javascript" src="public/js/controllers/detailsControl.js"></script>
+<script type="text/javascript" src="public/js/controllers/goalControl.js"></script>
+<script type="text/javascript" src="public/js/controllers/rewardControl.js"></script>
+<script type="text/javascript" src="/public/js/directive/directive.js"></script>
+<script type="text/javascript" src="/public/js/controllers/mapCTRL.js"></script>
+<script src="//api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
+
+
+
+</body>
+</html>
