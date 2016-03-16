@@ -70,7 +70,7 @@ gulp.task('browser-sync', function(){
 gulp.task('watch', function(){
 		gulp.watch(['public/**/*.styl','**/*.css'], ['stylus']);
 		gulp.watch('**/*.html', ['html']);
-		gulp.watch('public/**/*.js', ['scripts']);
+		gulp.watch('public/**/*.js');
 
 });
 
