@@ -5,3 +5,11 @@ h1 {
 p {
   color: #008000;
 }
+iframe {
+  width: 60%;
+  height: 40em;
+}
+#submit {
+  width: 30%;
+  height: 2em;
+}
