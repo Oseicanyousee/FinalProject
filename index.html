@@ -9,14 +9,21 @@
 </head>
 <body ng-app="tourApp">
 	<h1>Hello</h1>
-
-	<div class="nav"><a href="#/">VIEW 1</a> | <a href="#/view2">VIEW2</a></div>
-	
+	<nav>
+	<ul>
+		<li><a href="#/">Home</a></li>
+		<li><a href="#/view2">Adventure List</a></li>
+		<li><a href="#/view3">Adventure Details</a></li>
+		<li><a href="#/view4">Route to Goal</a></li>
+		<li><a href="#/view5">Reward</a></li>
+	</ul>
+	</nav>
 	<ng-view></ng-view>
 
 
 
 
+<footer><p>&copy; 2016 SelfieCity.com</p></footer>
 
 
 <!-- pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw
@@ -30,13 +37,17 @@ Mapbox API Token -->
 <script data-require="angular.js@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular.js"></script>
 <script data-require="angular-route@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
 <script type="text/javascript" src="./public/js/app.js"></script>
+<script type="text/javascript" src="/public/js/fbApp.js"></script>
 <script type="text/javascript" src="/public/js/controllers/indexControl.js"></script>
 <script type="text/javascript" src="/public/js/controllers/controller.js"></script>
+<script type="text/javascript" src="public/js/controllers/detailsControl"></script>
+<script type="text/javascript" src="public/js/controllers/goalControl"></script>
+<script type="text/javascript" src="public/js/controllers/rewardControl"></script>
 <script type="text/javascript" src="/public/js/directive/directive.js"></script>
 <script type="text/javascript" src="/public/js/controllers/mapCTRL.js"></script>
 <script src="//api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
 
-<footer><p>&copy; 2016 SelfieCity.com<p></footer>
+
 
 </body>
 </html>
