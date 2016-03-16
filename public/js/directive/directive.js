@@ -13,6 +13,8 @@
 // 			}
 // 		};
 // 	});
+
+
 angular.module('tourApp')
 	.directive('selfieMap', function(){
 		return {
