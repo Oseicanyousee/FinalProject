@@ -28,7 +28,7 @@ gulp.task('scripts', function(){
 gulp.task('jshint', function(){
    	   gulp.src(['public/js/**/*.js'])
 	  .pipe(jshint())
-	  .pipe(jshint.reporter('stylish-cool'));
+	  .pipe(jshint.reporter());
 });
 
 /////////////////////////////////	
@@ -81,7 +81,3 @@ gulp.task('watch', function(){
 gulp.task('default', ['stylus', 'html', 'browser-sync', 'watch']);
 
 // add scripts back in when done
-<<<<<<< HEAD
-=======
-
->>>>>>> 32f7e5bf6545d100e14ff559a848a74a8c381aff
