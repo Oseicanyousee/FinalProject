@@ -1,4 +1,4 @@
-angular.module('tourApp', ['facebook'])
+angular.module('tourApp', ['FBController'])
 ​
   .config([
     'FacebookProvider',
