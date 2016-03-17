@@ -3,11 +3,11 @@ angular.module('tourApp')
 		$scope.saveLocation = function(){
     		var currentPosition = navigator.geolocation.getCurrentPosition(function(position){
 	   				var lati = angular.element(document.querySelector('#latitude'));
-	   					lati.prepend(position.coords.latitude);
+	   					lati.prepend(position.coords.latitude)[0];
 
 	   				var longi = angular.element(document.querySelector('#longitude'));
-	   					longi.prepend(position.coords.longitude);
-						
-					})
+	   					longi.prepend(position.coords.longitude)[0];
+
+			});	
     	}	
 	}]);
