@@ -1,15 +1,15 @@
 h1 {
   color: #008000;
 }
+
 p {
   color: #008000;
 }
 iframe {
   width: 60%;
-  height: 30em;
+  height: 40em;
 }
-#mapFrame {
-  display: inline;
-  margin-left: auto;
-  margin-right: auto;
+#submit {
+  width: 30%;
+  height: 2em;
 }
