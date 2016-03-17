@@ -7,10 +7,11 @@ angular.module('tourApp')
 						latitude: location.lati,
 						longitude: location.longi
 					};
+					console.log(currentLocation);
 				},
 				getLocation: function(){
 					return currentLocation;
-					console.log(currentPosition);
+					console.log(currentLocation);
 				} 
 		};
 	});	
