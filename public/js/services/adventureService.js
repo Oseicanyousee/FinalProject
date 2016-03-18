@@ -1,6 +1,23 @@
 angular.module('tourApp')
-	.factory('adventureService', ['', function(){
-		return function name(){
-			
+	.factory('adventureService', function(){   
+		var currentLocation = {};
+		return {
+				saveLocation: function(location){
+					currentLocation = {
+						latitude: location.lati,
+						longitude: location.longi
+					};
+					console.log(currentLocation);
+				},
+				getLocation: function(){
+					return currentLocation;
+					console.log(currentLocation);
+				} 
 		};
-	}])
+	});	
+		
+
+
+
+
+
