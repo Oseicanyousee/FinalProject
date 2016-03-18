@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="facebookUtilsDemo" ng-controller="facebookLogin">
 <head>
 	<title>Final Project</title>
 		<link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css" />
 
 	<link rel="stylesheet" type="text/css" href="public/styles/styles.css">
-
 </head>
 <body ng-app="tourApp">
 	<h1>Hello</h1>
@@ -19,8 +18,26 @@
 	</ul>
 	</nav>
 	<ng-view></ng-view>
+	<facebook-login-button></facebook-login-button>
+	<div ng-hide="" class="ng-hide">
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
-
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
 
 
 
@@ -36,8 +53,11 @@ Mapbox API Token -->
 
 <script data-require="angular.js@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular.js"></script>
 <script data-require="angular-route@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+<script src="public/js/facebookUtils.min.js"></script>
 <script type="text/javascript" src="/public/js/app.js"></script>
 <script type="text/javascript" src="/public/js/fbApp.js"></script>
+<script type="text/javascript" src="/public/js/controllers/login.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script> <!--facebook cross-domain access ... channel file-->
 <script type="text/javascript" src="/public/js/controllers/indexControl.js"></script>
 <script type="text/javascript" src="/public/js/controllers/controller.js"></script>
 <script type="text/javascript" src="public/js/controllers/detailsControl.js"></script>
@@ -46,6 +66,7 @@ Mapbox API Token -->
 <script type="text/javascript" src="/public/js/controllers/mapCTRL.js"></script>
 <script type="text/javascript" src="/public/js/directive/directive.js"></script>
 <script src="//api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
+
 
 
 
