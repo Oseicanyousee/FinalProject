@@ -3,8 +3,8 @@ var app = angular.module('tourApp', ['ngRoute']);
 app.config(function($routeProvider){
 
   $routeProvider.when('/', {
-    templateUrl: 'public/views/home.html',
-    controller: 'indexControl'
+    templateUrl: 'public/views/login.html',
+    controller: 'FBController'
   });
 
   $routeProvider.when('/view2', {
