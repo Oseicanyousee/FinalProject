@@ -8,20 +8,25 @@
 	<link rel="stylesheet" type="text/css" href="public/styles/styles.css">
 
 		<link rel="stylesheet" type="text/css" href="public/styles/styles.css">
+		<link rel="stylesheet" type="text/css" href="public/styles/menuStyle.css">
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
 </head>
 <body ng-app="tourApp">
-	<h1>Hello</h1>
-	<nav>
-	<ul>
-		<li><a href="#/">Home</a></li>
-		<li><a href="#/view2">Adventure List</a></li>
-		<li><a href="#/view3">Adventure Details</a></li>
-		<li><a href="#/view4">Route to Goal</a></li>
-		<li><a href="#/view5">Reward</a></li>
-	</ul>
-	</nav>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='#/'><span>Home</span></a></li>
+   <li><a href='#/view2'><span>Adventure List</span></a>
+      <!-- <ul>
+         <li><a href='#/view3'><span>Downtown</span></a>
+         </li>
+      </ul> -->
+   </li>
+   <li><a href='#'><span>Profile</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
 	<ng-view></ng-view>
 	<facebook-login-button></facebook-login-button>
 	<div ng-hide="" class="ng-hide">
