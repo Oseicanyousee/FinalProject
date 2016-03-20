@@ -28,6 +28,11 @@
     left: 10px;
 }
 
+img {
+  width: 200px;
+  height: 200px
+}
+
 #directions {
     z-index: 99;
     background: rgba(0,0,0,.8);
@@ -84,10 +89,14 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw';
 var map = L.mapbox.map('map', 'lgod-tom.pdn1c00d', {
     zoomControl: false
-}).setView([42.3317856, -83.0487986], 16);
+}).setView([42.3322, -83.0463], 15);
 
 // move the attribution control out of the way
 map.attributionControl.setPosition('bottomleft');
+
+map.featureLayer.on('click', function(e) {
+        map.panTo(e.layer.getLatLng());
+    });
 
 // create the initial directions object, from which the layer
 // and inputs will pull data.
@@ -149,16 +158,13 @@ function success(position) {
         lng = position.coords.longitude,
         acc = position.coords.accuracy;
     map.panTo( [lat,lng] );
-    map.setZoom( 17 );
+    map.setZoom( 15 );
     directions.setOrigin( L.latLng(lat,lng,15) );
 };
 
     var error;
    // Geo Position
     navigator.geolocation.getCurrentPosition( success, error, options );
-
-
-
 
     // And hide the geolocation button
     geolocate.parentNode.removeChild(geolocate);
