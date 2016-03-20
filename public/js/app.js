@@ -1,9 +1,10 @@
 var app = angular.module('tourApp', ['ngRoute']);
 
 app.config(function($routeProvider){
+
   $routeProvider.when('/', {
-    templateUrl: 'public/views/home.html',
-    controller: 'indexControl'
+    templateUrl: 'public/views/login.html',
+    controller: 'FBController'
   });
 
   $routeProvider.when('/view2', {
@@ -13,7 +14,7 @@ app.config(function($routeProvider){
 
   $routeProvider.when('/view3', {
   	templateUrl: 'public/views/adventureDetail.html',
-  	controller: 'detailsControl'
+  	controller: 'mapCTRL'
   });
 
   $routeProvider.when('/view4', {
@@ -26,3 +27,5 @@ app.config(function($routeProvider){
     controller: 'rewardControl'
   });
 });
+
+
