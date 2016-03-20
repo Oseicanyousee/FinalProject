@@ -67,19 +67,25 @@
     }
 
 </style>
-
+<script   src="https://code.jquery.com/jquery-1.12.1.min.js"   integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I="   crossorigin="anonymous"></script>
 <script src='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.js'></script>
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.css' type='text/css' />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script data-require="angular.js@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<script data-require="angular-route@*" data-semver="1.5.0" src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+<script type="text/javascript" src="/public/js/angular-animate.min.js"></script>
+
 
 <div id='map'></div>
   <a href='#' id='geolocate' class='ui-button'>Find me</a>
 <div id='inputs'></div>
 <div id='errors'></div>
-<div id='directions'>
+<div id='directions' >
   <div id='routes'></div>
   <div id='instructions'></div>
-
 </div>
+
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw';
 var map = L.mapbox.map('map', 'lgod-tom.pdn1c00d', {
@@ -113,13 +119,33 @@ var directionsInstructionsControl = L.mapbox.directions.instructionsControl('ins
 var geolocate = document.getElementById('geolocate');
     var myLayer = L.mapbox.featureLayer().addTo(map);
         if (!navigator.geolocation) {
-        geolocate.innerHTML = 'Geolocation is not available';
+            geolocate.innerHTML = 'Geolocation is not available';
         } else {
-        geolocate.onclick = function (e) {
+            geolocate.onclick = function (e) {
+                var options = options || {};
+                    options.accuracy <= 10; //supposed to be accurate to 10 meters
+                    options.timeOut = 15000; // times out after 15 seconds
+                    options.maximumAge = 0; // Force current locations only
+                    options.enableHighAccuracy = true;
+                    navigator.geolocation.getCurrentPosition(success, error, options); //gets current position
+
+function success(position) {      
+    var lat  = position.coords.latitude,
+        lng = position.coords.longitude,
+        acc = position.coords.accuracy;
+                map.panTo( [lat,lng] );
+                map.setZoom( 17 );
+                directions.setOrigin( L.latLng(lat,lng,acc) ); //sets origin point for Geolocation
+};
+
+    var error;
+
             e.preventDefault();
             e.stopPropagation();
-            map.locate();
+
+            geolocate.parentNode.removeChild(geolocate); // hide find me button
         };
+   
     }
 map.on('locationfound', function(e) {
     map.fitBounds(e.bounds);
@@ -136,32 +162,6 @@ map.on('locationfound', function(e) {
             'marker-symbol': 'star'
         }
     });
-
-       var options = options || {};
-    options.maxWait = 10000,
-    options.desiredAccuracy <= 20;
-    options.timeOut = options.maxWait;
-    options.maximumAge = 0; // Force current locations only
-    options.enableHighAccuracy = true;
-    
-function success(position) {      
-    var lat  = position.coords.latitude,
-        lng = position.coords.longitude,
-        acc = position.coords.accuracy;
-    map.panTo( [lat,lng] );
-    map.setZoom( 17 );
-    directions.setOrigin( L.latLng(lat,lng,15) );
-};
-
-    var error;
-   // Geo Position
-    navigator.geolocation.getCurrentPosition( success, error, options );
-
-
-
-
-    // And hide the geolocation button
-    geolocate.parentNode.removeChild(geolocate);
 });        
 
 </script>

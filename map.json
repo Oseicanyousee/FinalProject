@@ -25,6 +25,7 @@
       "properties": {
         "id": "marker-iltijf9q1",
         "title": "Guardian Building",
+        "template": "<a href='public/views/modal/modal.html/'>",
         "description": "While the outside of the building may not be much to look at just inside you will find some beautiful art-deco and mayan revival architecture, be sure to look at the ceiling! \n<img src=\"http://detroit1701.org/Graphics/Guardian%20Building%20New%202.jpg\">",
         "marker-size": "medium",
         "marker-color": "#f86767",
