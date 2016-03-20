@@ -10,7 +10,7 @@ var app1 = angular.module('facebookUtilsDemo', ['facebookUtils'])
         user.api('/me').then(function(response) {
           $rootScope.loggedInUser = response;
         });
-      });
+      });d
     });
 
     $rootScope.$on('fbLogoutSuccess', function() {
