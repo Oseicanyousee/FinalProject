@@ -7,11 +7,11 @@ p {
 .page-header {
   color: #f00;
 }
-iframe {
-  width: 60%;
-  height: 40em;
-}
 #submit {
   width: 30%;
   height: 2em;
+}
+img {
+  width: 300px;
+  height: 300px;
 }
