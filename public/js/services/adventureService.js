@@ -11,7 +11,6 @@ angular.module('tourApp')
 				},
 				getLocation: function(){
 					return currentLocation;
-					console.log(currentLocation);
 				} 
 		};
 	});	
