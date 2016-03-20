@@ -4,12 +4,14 @@ h1 {
 p {
   color: #008000;
 }
-iframe {
-  width: 60%;
-  height: 30em;
+.page-header {
+  color: #f00;
 }
-#mapFrame {
-  display: inline;
-  margin-left: auto;
-  margin-right: auto;
+#submit {
+  width: 30%;
+  height: 2em;
+}
+img {
+  width: 300px;
+  height: 300px;
 }
