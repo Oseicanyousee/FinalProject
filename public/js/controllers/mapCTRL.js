@@ -19,11 +19,11 @@ angular.module('tourApp')
 						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
 	        };	
-        	if (currentLocation === -83.0500, 42.3357){
+        	if ($scope.checkIn === (-83.049747, 42.335963)){
         		alert('You have checked In!!');
-        		console.log(currentLocation);
+        		console.log(checkIn());
         	} else { 
-        		console.log(currentLocation);
+        		console.log();
         		alert('You not there yet');
         	}		
         }; 	
