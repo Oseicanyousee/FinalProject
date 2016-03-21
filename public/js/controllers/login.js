@@ -3,7 +3,7 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
     'appID' : '1035212533189388',
     'routingEnabled': true
   })
-
+ 
   .controller('FBController',['$scope','$rootScope',function($scope,$rootScope){
     $rootScope.$on('fbLoginSuccess', function(name, response) {
       facebookUser.then(function(user) {
@@ -20,3 +20,5 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
       });
     });
   }]);
+
+  
