@@ -9,7 +9,7 @@ angular.module('tourApp')
 	        	var error;
 				var options = options || {};
 					options.accuracy <= 10; //supposed to be accurate to 10 meters
-					options.timeOut = 15000; // times out after 15 seconds
+					options.timeOut = 5000; // times out after 15 seconds
 					options.maximumAge = 0; // Force current locations only
 					options.enableHighAccuracy = true;
 						function success(position) {      
@@ -21,9 +21,10 @@ angular.module('tourApp')
 	        };	
         	if (currentLocation === -83.0500, 42.3357){
         		alert('You have checked In!!');
-        		console.log('hello');
+        		console.log(currentLocation);
         	} else { 
         		console.log(currentLocation);
+        		alert('You not there yet');
         	}		
         }; 	
   }]);
