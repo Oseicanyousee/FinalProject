@@ -137,7 +137,7 @@ var geolocate = document.getElementById('geolocate');
                     options.maximumAge = 0; // Force current locations only
                     options.enableHighAccuracy = true;
                     navigator.geolocation.getCurrentPosition(success, error, options); //gets current position
-                    console.log(lat);
+                    geolocate.parentNode.removeChild(geolocate); // hide find me button
 
 function success(position) {      
     var lat  = position.coords.latitude,
@@ -153,7 +153,6 @@ function success(position) {
             e.preventDefault();
             e.stopPropagation();
 
-            geolocate.parentNode.removeChild(geolocate); // hide find me button
         };
    
     }

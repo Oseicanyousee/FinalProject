@@ -4,22 +4,22 @@ angular.module('tourApp')
         map.setView([42.3317856, -83.0487986], 16.12);
         };
         
-        	$scope.currentLocation = function(){
-        		navigator.geolocation.getCurrentPosition(success, error, options);
-	        	var error;
-	        	 var options = options || {};
-                    options.accuracy <= 10; //supposed to be accurate to 10 meters
-                    options.timeOut = 15000; // times out after 15 seconds
-                    options.maximumAge = 0; // Force current locations only
-                    options.enableHighAccuracy = true;
-	        	function success(position) {      
-			    var lat  = position.coords.latitude,
-			        lng = position.coords.longitude,
-			        acc = position.coords.accuracy;
-				};
-	        };	
         $scope.checkIn = function(){
-        	if (currentLocation === [-83.0500, 42.3357]){
+        	 var currentLocation = function(){
+	        	var error;
+				var options = options || {};
+					options.accuracy <= 10; //supposed to be accurate to 10 meters
+					options.timeOut = 15000; // times out after 15 seconds
+					options.maximumAge = 0; // Force current locations only
+					options.enableHighAccuracy = true;
+						function success(position) {      
+							var lat  = position.coords.latitude,
+								lng = position.coords.longitude,
+								acc = position.coords.accuracy;
+						};
+        		navigator.geolocation.getCurrentPosition(success, error, options);
+	        };	
+        	if (currentLocation === -83.0500, 42.3357){
         		alert('You have checked In!!');
         		console.log('hello');
         	} else { 
