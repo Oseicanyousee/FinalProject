@@ -9,7 +9,7 @@ angular.module('tourApp')
 	        	var error;
 				var options = options || {};
 					options.accuracy <= 10; //supposed to be accurate to 10 meters
-					options.timeOut = 15000; // times out after 15 seconds
+					options.timeOut = 5000; // times out after 15 seconds
 					options.maximumAge = 0; // Force current locations only
 					options.enableHighAccuracy = true;
 						function success(position) {      
@@ -19,11 +19,12 @@ angular.module('tourApp')
 						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
 	        };	
-        	if (currentLocation === -83.0500, 42.3357){
+        	if ($scope.checkIn === (-83.049747, 42.335963)){
         		alert('You have checked In!!');
-        		console.log('hello');
+        		console.log(checkIn());
         	} else { 
-        		console.log(currentLocation);
+        		console.log();
+        		alert('You not there yet');
         	}		
         }; 	
   }]);
