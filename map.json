@@ -11,6 +11,26 @@
       "fill": "#1087bf",
       "fill-opacity": 0.20000000298023224
     },
+    },{
+      "type": "Feature",
+      "properties": {
+        "id": "marker-iltijf9q1",
+        "title": "Guardian Building",
+        "template": "<a href='public/views/modal/modal.html/'>",
+        "description": "While the outside of the building may not be much to look at just inside you will find some beautiful art-deco and mayan revival architecture, be sure to look at the ceiling! \n<img src=\"http://detroit1701.org/Graphics/Guardian%20Building%20New%202.jpg\">",
+        "marker-size": "medium",
+        "marker-color": "#f86767",
+        "marker-symbol": "cross"
+      },
+      "geometry": {
+        "coordinates": [
+          -83.04631,
+          42.329367
+        ],
+        "type": "Point"
+      },
+      "id": "790ba7b77476760b6a312e249016b6c1"
+     },{  
     "geometry": {
       "coordinates": [
         [
