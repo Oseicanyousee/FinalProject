@@ -5,27 +5,41 @@ angular.module('tourApp')
         };
         
         $scope.checkIn = function(){
-        	 var currentLocation = function(){
+        	console.log('whatever');
 	        	var error;
 				var options = options || {};
 					options.accuracy <= 10; //supposed to be accurate to 10 meters
-					options.timeOut = 5000; // times out after 15 seconds
+					options.timeOut = 5000; // times out after 5 seconds
 					options.maximumAge = 0; // Force current locations only
 					options.enableHighAccuracy = true;
 						function success(position) {      
-							var lat  = position.coords.latitude,
-								lng = position.coords.longitude,
-								acc = position.coords.accuracy;
+							var cords = {};
+							var target = {};
+								cords.lng = position.coords.longitude;
+								cords.lat  = position.coords.latitude;
+								// cords.acc = position.coords.accuracy;
+								target.lng = -83.049747;
+								target.lat = 42.335963;
+
+								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
+									alert('You have checked In!!');
+									console.log(target);
+									console.log(cords);
+								} else {
+									alert('you have not checked in');
+								}
+        // 							console.log(currentLocation);
+						        	// if (cords === target){
+						        	// 	alert('You have checked In!!');
+						        	// 	console.log(cords);
+						        	// } else { 
+						        	// 	console.log(cords);
+						        	// 	console.log(target);
+						        	// 	alert('You not there yet');
+						        	// }		
+
 						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
-	        };	
-        	if ($scope.checkIn === (-83.049747, 42.335963)){
-        		alert('You have checked In!!');
-        		console.log(checkIn());
-        	} else { 
-        		console.log();
-        		alert('You not there yet');
-        	}		
         }; 	
   }]);
 
