@@ -1,4 +1,4 @@
-var app = angular.module('tourApp', ['ngRoute','ngAnimate', 'ui.bootstrap']);
+var app = angular.module('tourApp', ['ngRoute','ngAnimate', 'ui.bootstrap','facebookUtilsDemo']);
 
 app.config(function($routeProvider){
 

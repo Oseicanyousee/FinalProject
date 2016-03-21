@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('tourApp')
 	.directive('selfieMap', function(){
 		return {
@@ -14,7 +13,6 @@ angular.module('tourApp')
 			}
 		};
 	});
-=======
 // angular.module('tourApp')
 // 	.directive('selfieMap', function(){
 // 		return {
@@ -67,4 +65,3 @@ angular.module('tourApp')
     };
   }
 ]);
->>>>>>> master
