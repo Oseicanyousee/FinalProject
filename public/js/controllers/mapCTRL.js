@@ -1,11 +1,17 @@
 angular.module('tourApp')
     .controller('mapCTRL', ['$scope', 'adventureService', function ($scope, adventureService) {
- 
+
+               $scope.showModal = false;
+             $scope.toggleModal = function(){
+        $scope.showModal = !$scope.showModal;
+         };  
+
         $scope.callback = function (map) {
         map.setView([42.3317856, -83.0487986], 16.12);
         };
         
-        $scope.checkIn = function(){
+        $scope.checkIn = function(toggleModal){
+
         	console.log('whatever');
 	        	var error;
 				var options = options || {};
@@ -23,9 +29,7 @@ angular.module('tourApp')
 								target.lat = 42.335963;
 
 								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
-									alert('You have checked In!!');
-									console.log(target);
-									console.log(cords);
+    								return toggleModal;
 								} else {
 									alert('you have not checked in');
 								}
@@ -42,45 +46,15 @@ angular.module('tourApp')
 						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
         }; 	
+
+       
+        // function successCheckIn(){
+        //      if(checkIn()===true){
+        //     return toggleModal();
+        //     console.log("YO");
+        // }
+        // }
   }]);
 
     
-// angular.module("tourApp")
-//    .controller("mapCTRL", [ "$scope", function($scope) {
-// 'use strict';
-
-// $scope.$on('$viewContentLoaded', function() {
-//             mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuamFtaW4td3lzcyIsImEiOiJVcm5FdEw4In0.S8HRIEq8NqdtFVz2-BwQog';
-
-//             $scope.map = new mapboxgl.Map({
-//                 container: 'map', // container id
-//                 style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-//                 center: [42.3317856, -83.0487986], // starting position
-//                 zoom: 10, // starting zoom,
-//                 interactive: true
-//             });
-//             $scope.map.on('style.load', function(){
-//                 $scope.map.addSource("tom",{
-//                     "type": "geojson",
-//                     "data": 'https://api.myjson.com/bins/m3af'
-//                 });
-//             });
-//         });
-   
-
-//             $scope.map = new mapboxgl.Map({
-//                 container: 'map', // container id
-//                 style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-//                 center: [42.3317856, -83.0487986], // starting position
-//                 zoom: 10, // starting zoom,
-//                 interactive: true
-//             });
-//             $scope.map.on('style.load', function(){
-//                 $scope.map.addSource("tom",{
-//                     "type": "geojson",
-//                     "data": 'https://api.myjson.com/bins/m3af'
-//                 });
-//             });
-//         });
-// }]);
 
