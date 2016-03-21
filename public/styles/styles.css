@@ -7,6 +7,9 @@ p {
 .page-header {
   color: #f00;
 }
+iframe {
+  border: 1px;
+}
 #submit {
   width: 30%;
   height: 2em;
