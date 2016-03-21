@@ -5,5 +5,13 @@
 <iframe width='75%' height='600px' frameBorder='0' src='map.html'></iframe>
 
 
-<button ng-click="checkIn()">Check In</button>
+<!-- <button ng-click="checkIn()">Check In</button>
+ -->
 
+<div ng-controller="mapCTRL" class="container">
+  <button ng-click="toggleModal()" class="btn btn-default">Check In!</button>
+    
+  <modal title="Check In Success!" visible="showModal">
+    <img class="modalBadge" src="./public/images/grandcircus.png">
+  </modal>
+</div>

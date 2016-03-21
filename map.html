@@ -144,7 +144,7 @@ function success(position) {
         lng = position.coords.longitude,
         acc = position.coords.accuracy;
                 map.panTo( [lat,lng] );
-                map.setZoom( 17 );
+                map.setZoom( 16 );
                 directions.setOrigin( L.latLng(lat,lng,acc) ); //sets origin point for Geolocation
 };
 
