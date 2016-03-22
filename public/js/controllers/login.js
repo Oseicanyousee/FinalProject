@@ -13,6 +13,8 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
       });
     });
 
+
+
     $rootScope.$on('fbLogoutSuccess', function() {
       $scope.$apply(function() {
         $rootScope.loggedInUser = {};
@@ -21,4 +23,12 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
     });
   }]);
 
-  // Darcy leaves another comment
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
+  // google login function to get profile info

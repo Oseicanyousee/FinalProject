@@ -7,6 +7,8 @@
  		<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
         rel="stylesheet" type="text/css" />
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<meta name="google-signin-client_id" content="992517329332-h35op449h1qo196eldc1kqud4u00bvcj.apps.googleusercontent.com">
+		<!-- refer to google login info page: https://developers.google.com/identity/sign-in/web/sign-in#load_the_google_platform_library -->
 </head>
 <body ng-app="tourApp">
 
@@ -20,8 +22,10 @@
          </li>
       </ul> -->
    </li>
+
    <li><a href='#/view5'><span>Profile</span></a></li>
    <li class='last'><a href='#'><span>Contact</span></a></li>
+   <li class='last'><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
 </ul>
 </div>
 	<ng-view></ng-view>
@@ -90,6 +94,9 @@ Mapbox API Token
 <!-- mapbox js -->
 <script type="text/javascript" src="/public/js/services/adventureService.js"></script>
 <!-- service -->
-
+<script type="text/javascript" src="http://apis.google.com/js/api.js"></script>
+<!-- google apis -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- google platform library for login -->
 </body>
 </html> 
