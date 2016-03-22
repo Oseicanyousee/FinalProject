@@ -1,5 +1,5 @@
 angular.module('tourApp')
-    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService', function ($scope, adventureService, mapService) {
+    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService','profileService', function ($scope, adventureService, mapService, profileService) {
                $scope.showModal = false;
              $scope.toggleModal = function(){
         $scope.showModal = !$scope.showModal;
@@ -10,7 +10,7 @@ angular.module('tourApp')
         };
         
         $scope.checkIn = function(){
-
+        	$scope.profileBadges = [];
 			mapService.then(function(data){
 				console.log(data);
 			});
@@ -29,9 +29,14 @@ angular.module('tourApp')
 								target.lng = -83.049911;
 								target.lat = 42.335706;
 
-								if(Math.abs(cords.lat - target.lat) <= 0.0002 && (Math.abs(cords.lng - target.lng)<= 0.0002)){
-    								console.log('i am working');
+								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
+    								// console.log('i am working');
+    								var successCheckIn = true;
     								console.log(cords);
+    								console.log(target);
+    						// 			target.lng = -83.049911;
+										// target.lat = 45.335706;
+    								alert('You are checked in!!')	
     								// return toggleModal;
 								} else {
 									alert('you have not checked in');

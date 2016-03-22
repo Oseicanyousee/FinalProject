@@ -82,6 +82,7 @@ img {
 <script type="text/javascript" src="/public/js/angular-animate.min.js"></script>
 
 
+
 <div id='map'></div>
   <a href='#' id='geolocate' class='ui-button'>Find me</a>
 <div id='inputs'></div>
@@ -94,7 +95,8 @@ img {
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw';
 var map = L.mapbox.map('map', 'lgod-tom.pdn1c00d', {
-    zoomControl: false
+    zoomControl: false,
+    accessToken: 'pk.eyJ1IjoibGdvZC10b20iLCJhIjoiY2lsc2E2Y3Y4MDh4c3R5a245aXg1cHg5eiJ9.JXNc2afO-soiBxL0iHyMFw'
 }).setView([42.3322, -83.0463], 15);
 
 // move the attribution control out of the way

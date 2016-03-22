@@ -11,19 +11,18 @@
 </script>
  
 
- <div map-box-map="", data-lat="42.3322", data-lng="-83.0463", data-zoom-level="15", data-map-id="'lgod-tom.pdn1c00d'", style="width : 100%;height: 600px;",data-zoom-control="true", data-markers="[[-83.04631,
-          42.329367],[-83.04631, 42.329367], [-83.04541, 42.333247],[-83.049747, 42.335963],[-83.047373, 42.33493],[-83.044924, 42.327125]]"></div>
+ <!-- <div map-box-map="", data-lat="42.3322", data-lng="-83.0463", data-zoom-level="15", data-map-id="'lgod-tom.pdn1c00d'", style="width : 100%;height: 600px;",data-zoom-control="true", data-markers="[[-83.04631,
+          42.329367],[-83.04631, 42.329367], [-83.04541, 42.333247],[-83.049747, 42.335963],[-83.047373, 42.33493],[-83.044924, 42.327125]]"></div> -->
 
-<!-- <iframe width='75%' height='600px' frameBorder='0' src='map.html'></iframe> -->
-<mapBoxMap></mapBoxMap>
+<iframe width='75%' height='600px' frameBorder='0' src='map.html'></iframe>
 
 <!-- <button ng-click="checkIn()">Check In</button>
  -->
 
 <div ng-controller="mapCTRL" class="container">
-  <button ng-click="checkIn(toggleModal())" class="btn btn-default">Check In!</button>
+  <button ng-click="checkIn()" class="btn btn-default">Check In!</button>
     
-  <modal title="Check In Success!" visible="showModal">
+  <modal title="Check In Success!" ng-show="showModal">
     <img class="modalBadge" src="./public/images/grandcircus.png">
   </modal>
 </div>
