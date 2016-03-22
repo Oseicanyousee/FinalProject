@@ -23,7 +23,7 @@ app.config(function($routeProvider){
   });
 
   $routeProvider.when('/view5', {
-    templateUrl: 'public/views/newView.html',
+    templateUrl: 'public/views/profile.html',
     controller: 'rewardControl'
   });
 });
