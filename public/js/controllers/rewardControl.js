@@ -1,4 +1,4 @@
 angular.module('tourApp')
-	.controller("rewardControl", function($scope){
-
-	});
+	.controller("rewardControl",['$scope','profileService', function($scope, profileService){
+		$scope.getBadges = getBadges();
+	}]);
