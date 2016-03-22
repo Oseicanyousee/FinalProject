@@ -1,12 +1,3 @@
-@font-face { 
-  font-family: "OstrichSansBold"; 
-  src: url('../../ostrich-sans-master/OstrichSansBold.otf'); 
-} 
-@font-face { 
-  font-family: "OstrichSansLight"; 
-  src: url('../../ostrich-sans-master/OstrichSansLight.otf'); 
-} 
-
 h1 {
   color: #008000;
 }
@@ -20,50 +11,40 @@ p {
   width: 30%;
   height: 2em;
 }
-/*img {
-  width: 1024px;
-  height: 665px;
-}*/
+img {
+  width: 300px;
+  height: 300px;
+}
 
-/*html, #backgroundHero1 {
-	background-image: url(public/images/backgroundimages/comicselfie.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	top: 0;
-  	right: 0;
-  	bottom: 0;
-  	left: 0;
-}*/
+h1 {
+color #008000;
+}
+
+p {
+.page-header
+color: #f00,
+}
+
+#submit {
+width: 30%;
+height: 2em;
+}
 
 .backImage {
-  max-width: 100%;
-  display:block;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 1024px;
-  height: 665px;
-}
-
-#title span:first-child {
-  font-family: 'OstrichSansBold';
-  font-size: 175px; 
-
-}
-
-#title {
-  font-family: 'OstrichSansLight';
-  font-size: 200px;
-  margin:-100px auto -105px;
-  position: relative;
-  z-index: 100;
+max-width: 100%;
+display: block;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-position: center;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+width: 1024px;
+height: 665px;
 }
 
 footer {
