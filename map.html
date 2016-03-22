@@ -102,6 +102,21 @@ map.attributionControl.setPosition('bottomleft');
 
 map.featureLayer.on('click', function(e) {
         map.panTo(e.layer.getLatLng());
+        var destination = {
+          "type": "Feature",
+          "geometry": {
+          "type": "Point",
+          "coordinates": [e.latlng.lng, e.latlng.lat]
+         },
+          "properties": {
+            "title": '< >',
+            "description": '<>',
+            "marker-color": "#3ca0d3",
+            "marker-size": "large",
+            "marker-symbol": "star"
+          }
+        };
+        directions.setDestination(destination).query();
     });
 
 // create the initial directions object, from which the layer

@@ -10,7 +10,7 @@ angular.module('tourApp')
         map.setView([42.3317856, -83.0487986], 16.12);
         };
         
-        $scope.checkIn = function(toggleModal){
+        $scope.checkIn = function(){
 
         	console.log('whatever');
 	        	var error;
@@ -29,31 +29,14 @@ angular.module('tourApp')
 								target.lat = 42.335963;
 
 								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
-    								return toggleModal;
+    								console.log('i am working');
+    								// return toggleModal;
 								} else {
 									alert('you have not checked in');
 								}
-        // 							console.log(currentLocation);
-						        	// if (cords === target){
-						        	// 	alert('You have checked In!!');
-						        	// 	console.log(cords);
-						        	// } else { 
-						        	// 	console.log(cords);
-						        	// 	console.log(target);
-						        	// 	alert('You not there yet');
-						        	// }		
-
-						};
+      						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
         }; 	
-
-       
-        // function successCheckIn(){
-        //      if(checkIn()===true){
-        //     return toggleModal();
-        //     console.log("YO");
-        // }
-        // }
   }]);
 
     
