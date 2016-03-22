@@ -3,7 +3,7 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
     'appID' : '1035212533189388',
     'routingEnabled': true
   })
-
+ 
   .controller('FBController',['$scope','$rootScope',function($scope,$rootScope){
     $rootScope.$on('fbLoginSuccess', function(name, response) {
       facebookUser.then(function(user) {
@@ -13,6 +13,8 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
       });
     });
 
+
+
     $rootScope.$on('fbLogoutSuccess', function() {
       $scope.$apply(function() {
         $rootScope.loggedInUser = {};
@@ -20,3 +22,13 @@ angular.module('facebookUtilsDemo', ['facebookUtils'])
       });
     });
   }]);
+
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
+  // google login function to get profile info

@@ -1,70 +1,46 @@
 angular.module('tourApp')
-    .controller('mapCTRL', ['$scope', 'adventureService', function ($scope, adventureService) {
+    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService', function ($scope, adventureService, mapService) {
+               $scope.showModal = false;
+             $scope.toggleModal = function(){
+        $scope.showModal = !$scope.showModal;
+         };  
+
         $scope.callback = function (map) {
         map.setView([42.3317856, -83.0487986], 16.12);
         };
         
         $scope.checkIn = function(){
-        	 var currentLocation = function(){
+
+			mapService.then(function(data){
+				console.log(data);
+			});
 	        	var error;
 				var options = options || {};
 					options.accuracy <= 10; //supposed to be accurate to 10 meters
-					options.timeOut = 15000; // times out after 15 seconds
+					options.timeOut = 5000; // times out after 5 seconds
 					options.maximumAge = 0; // Force current locations only
 					options.enableHighAccuracy = true;
 						function success(position) {      
-							var lat  = position.coords.latitude,
-								lng = position.coords.longitude,
-								acc = position.coords.accuracy;
-						};
+							var cords = {};
+							var target = {};
+								cords.lng = position.coords.longitude;
+								cords.lat  = position.coords.latitude;
+								// cords.acc = position.coords.accuracy;
+								target.lng = -83.049911;
+								target.lat = 42.335706;
+
+								if(Math.abs(cords.lat - target.lat) <= 0.0002 && (Math.abs(cords.lng - target.lng)<= 0.0002)){
+    								console.log('i am working');
+    								console.log(cords);
+    								// return toggleModal;
+								} else {
+									alert('you have not checked in');
+									console.log(cords);
+								}
+      						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
-	        };	
-        	if (currentLocation === -83.0500, 42.3357){
-        		alert('You have checked In!!');
-        		console.log('hello');
-        	} else { 
-        		console.log(currentLocation);
-        	}		
         }; 	
   }]);
 
     
-// angular.module("tourApp")
-//    .controller("mapCTRL", [ "$scope", function($scope) {
-// 'use strict';
-
-// $scope.$on('$viewContentLoaded', function() {
-//             mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuamFtaW4td3lzcyIsImEiOiJVcm5FdEw4In0.S8HRIEq8NqdtFVz2-BwQog';
-
-//             $scope.map = new mapboxgl.Map({
-//                 container: 'map', // container id
-//                 style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-//                 center: [42.3317856, -83.0487986], // starting position
-//                 zoom: 10, // starting zoom,
-//                 interactive: true
-//             });
-//             $scope.map.on('style.load', function(){
-//                 $scope.map.addSource("tom",{
-//                     "type": "geojson",
-//                     "data": 'https://api.myjson.com/bins/m3af'
-//                 });
-//             });
-//         });
-   
-
-//             $scope.map = new mapboxgl.Map({
-//                 container: 'map', // container id
-//                 style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-//                 center: [42.3317856, -83.0487986], // starting position
-//                 zoom: 10, // starting zoom,
-//                 interactive: true
-//             });
-//             $scope.map.on('style.load', function(){
-//                 $scope.map.addSource("tom",{
-//                     "type": "geojson",
-//                     "data": 'https://api.myjson.com/bins/m3af'
-//                 });
-//             });
-//         });
-// }]);
 

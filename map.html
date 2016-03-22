@@ -19,7 +19,7 @@
     position: absolute;
     width: 33.3333%;
     max-width: 300px;
-    min-width: 200px;
+    min-width: 50px;
 }
 
 #inputs {
@@ -102,6 +102,21 @@ map.attributionControl.setPosition('bottomleft');
 
 map.featureLayer.on('click', function(e) {
         map.panTo(e.layer.getLatLng());
+        var destination = {
+          "type": "Feature",
+          "geometry": {
+          "type": "Point",
+          "coordinates": [e.latlng.lng, e.latlng.lat]
+         },
+          "properties": {
+            "title": '< >',
+            "description": '<>',
+            "marker-color": "#3ca0d3",
+            "marker-size": "large",
+            "marker-symbol": "star"
+          }
+        };
+        directions.setDestination(destination).query();
     });
 
 // create the initial directions object, from which the layer
@@ -109,6 +124,11 @@ map.featureLayer.on('click', function(e) {
 var directions = L.mapbox.directions({
     profile: 'mapbox.walking'
 });
+setTimeout(function(){
+    window.getDirections = function(){
+      return directions;
+    }
+},500);
 
 var directionsLayer = L.mapbox.directions.layer(directions)
     .addTo(map);
@@ -144,7 +164,7 @@ function success(position) {
         lng = position.coords.longitude,
         acc = position.coords.accuracy;
                 map.panTo( [lat,lng] );
-                map.setZoom( 17 );
+                map.setZoom( 16 );
                 directions.setOrigin( L.latLng(lat,lng,acc) ); //sets origin point for Geolocation
 };
 

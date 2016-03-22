@@ -1,4 +1,4 @@
-var app = angular.module('tourApp', ['ngRoute','ngAnimate', 'ui.bootstrap','facebookUtilsDemo']);
+var app = angular.module('tourApp', ['ngRoute','ngAnimate', 'ui.bootstrap']);
 
 app.config(function($routeProvider){
 
@@ -23,7 +23,7 @@ app.config(function($routeProvider){
   });
 
   $routeProvider.when('/view5', {
-    templateUrl: 'public/views/reward.html',
+    templateUrl: 'public/views/profile.html',
     controller: 'rewardControl'
   });
 });
