@@ -1,17 +1,10 @@
 angular.module('tourApp')
-  // .constant('facebookConfigSettings', {
-  //   'appID' : '1035212533189388',
-  //   'routingEnabled': true
-  // })
- 
   .controller('FBController',['$scope',function($scope){
-  
+    var profile;
+    $scope.profile.name = profile.getName();
 
-    
+    }]);
 
-    
-    
-  }]);
 function onSignIn(googleUser) {
   profile = googleUser.getBasicProfile()
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
