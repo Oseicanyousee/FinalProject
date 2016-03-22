@@ -124,6 +124,11 @@ map.featureLayer.on('click', function(e) {
 var directions = L.mapbox.directions({
     profile: 'mapbox.walking'
 });
+setTimeout(function(){
+    window.getDirections = function(){
+      return directions;
+    }
+},500);
 
 var directionsLayer = L.mapbox.directions.layer(directions)
     .addTo(map);

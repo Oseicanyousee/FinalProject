@@ -1,6 +1,5 @@
 angular.module('tourApp')
-    .controller('mapCTRL', ['$scope', 'adventureService', function ($scope, adventureService) {
-
+    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService', function ($scope, adventureService, mapService) {
                $scope.showModal = false;
              $scope.toggleModal = function(){
         $scope.showModal = !$scope.showModal;
@@ -12,7 +11,9 @@ angular.module('tourApp')
         
         $scope.checkIn = function(){
 
-        	console.log('whatever');
+			mapService.then(function(data){
+				console.log(data);
+			});
 	        	var error;
 				var options = options || {};
 					options.accuracy <= 10; //supposed to be accurate to 10 meters
@@ -25,14 +26,16 @@ angular.module('tourApp')
 								cords.lng = position.coords.longitude;
 								cords.lat  = position.coords.latitude;
 								// cords.acc = position.coords.accuracy;
-								target.lng = -83.049747;
-								target.lat = 42.335963;
+								target.lng = -83.049911;
+								target.lat = 42.335706;
 
-								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
+								if(Math.abs(cords.lat - target.lat) <= 0.0002 && (Math.abs(cords.lng - target.lng)<= 0.0002)){
     								console.log('i am working');
+    								console.log(cords);
     								// return toggleModal;
 								} else {
 									alert('you have not checked in');
+									console.log(cords);
 								}
       						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
