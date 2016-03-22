@@ -1,27 +1,9 @@
-angular.module('facebookUtilsDemo', ['facebookUtils'])
-  .constant('facebookConfigSettings', {
-    'appID' : '1035212533189388',
-    'routingEnabled': true
-  })
- 
-  .controller('FBController',['$scope','$rootScope',function($scope,$rootScope){
-    $rootScope.$on('fbLoginSuccess', function(name, response) {
-      facebookUser.then(function(user) {
-        user.api('/me').then(function(response) {
-          $rootScope.loggedInUser = response;
-        });
-      });
-    });
+angular.module('tourApp')
+  .controller('FBController',['$scope',function($scope){
+    var profile;
+    $scope.profile.name = profile.getName();
 
-
-
-    $rootScope.$on('fbLogoutSuccess', function() {
-      $scope.$apply(function() {
-        $rootScope.loggedInUser = {};
-
-      });
-    });
-  }]);
+    }]);
 
 
 function onSignIn(googleUser) {
