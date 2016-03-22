@@ -1,5 +1,9 @@
 angular.module('tourApp')
     .controller('mapCTRL', ['$scope', 'adventureService', 'mapService', function ($scope, adventureService, mapService) {
+               var target = {};
+               target.lng = -83.049911;
+				target.lat = 42.335706;
+
                $scope.showModal = false;
              $scope.toggleModal = function(){
         $scope.showModal = !$scope.showModal;
@@ -22,16 +26,20 @@ angular.module('tourApp')
 					options.enableHighAccuracy = true;
 						function success(position) {      
 							var cords = {};
-							var target = {};
+							// var target = {};
 								cords.lng = position.coords.longitude;
 								cords.lat  = position.coords.latitude;
 								// cords.acc = position.coords.accuracy;
-								target.lng = -83.049911;
-								target.lat = 42.335706;
+								// target.lng = -83.049911;
+								// target.lat = 42.335706;
 
-								if(Math.abs(cords.lat - target.lat) <= 0.0002 && (Math.abs(cords.lng - target.lng)<= 0.0002)){
+								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
     								console.log('i am working');
     								console.log(cords);
+    								console.log(target);
+    									target.lng = -83.049911;
+										target.lat = 45.335706;
+    								alert('You are checked in!!')	
     								// return toggleModal;
 								} else {
 									alert('you have not checked in');
