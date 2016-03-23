@@ -210,7 +210,7 @@ margin: -80px 450px -10px;
 .btn-pref .btn {
     -webkit-border-radius:0 !important;
 }
-<<<<<<< HEAD
+
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 * {
@@ -262,3 +262,7 @@ a {
             width: 408px;
 }
 
+ {
+  transform: rotate(180deg);
+  display: inline-block;
+} 

@@ -2,8 +2,8 @@ angular.module('tourApp')
 	.controller("adventureList",['$scope',function($scope){
 		
 	$(document).ready(function() {
-		    $('.menu a').hover(
-		    	function() {
+		$('.menu a').hover(
+		    function() {
 		     		$(this).stop().animate({opacity: 1}, 200);
 		        }, 
 		        function() {
@@ -12,5 +12,6 @@ angular.module('tourApp')
 			}
 		);
 	});
+
 }]);
 
