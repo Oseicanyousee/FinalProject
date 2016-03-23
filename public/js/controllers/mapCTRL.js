@@ -33,7 +33,7 @@ angular.module('tourApp')
 							    var modalInstance = $uibModal.open({
 							      templateUrl: 'public/views/modal/successModal.html',
 							      controller: 'mapCTRL',
-							      size: 'Lg',
+							      size: 'sm',
 							      // windowClass: 'my-modal'
 							    });
     									target.lng = -83.049911;
@@ -43,7 +43,7 @@ angular.module('tourApp')
 									var modalInstance = $uibModal.open({
 							      templateUrl: 'public/views/modal/failModal.html',
 							      controller: 'mapCTRL',
-							      size: 'Lg'
+							      size: 'sm'
 							    	});
 								};
       						};
