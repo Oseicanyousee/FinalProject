@@ -18,6 +18,7 @@ angular.module('tourApp')
 			// updateBadges();
 			profileBadges.push(newBadge);
 		}
+<<<<<<< HEAD
 		var getBadge = function(){
 			return profileBadges;
 		};
@@ -27,3 +28,14 @@ angular.module('tourApp')
 			getBadge: getBadge
 			};		
 	});
+=======
+	});
+
+$(document).ready(function() {
+$(".btn-pref .btn").click(function () {
+    $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+    // $(".tab").addClass("active"); // instead of this do the below 
+    $(this).removeClass("btn-default").addClass("btn-primary");   
+});
+});
+>>>>>>> db3e5e4e64664cca571cd169aa952021422d7147
