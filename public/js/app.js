@@ -18,8 +18,8 @@ app.config(function($routeProvider){
   });
 
   $routeProvider.when('/view4', {
-    templateUrl: 'public/views/routeGoal.html',
-    controller: 'goalControl'
+    templateUrl: 'public/views/about.html',
+    controller: 'aboutControl'
   });
 
   $routeProvider.when('/view5', {
