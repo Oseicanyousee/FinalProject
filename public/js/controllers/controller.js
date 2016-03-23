@@ -11,5 +11,6 @@ angular.module('tourApp')
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
 }
+
   // google login function to get profile info
 	});
