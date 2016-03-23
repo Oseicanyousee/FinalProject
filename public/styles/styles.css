@@ -46,6 +46,9 @@ max-width: 100%;
 
 footer {
   text-align: center;
+  clear:both;
+  /*position: relative;*/
+  margin: 50px auto auto; 
 }
 
 .profileBadge {
@@ -123,10 +126,6 @@ margin: -80px 450px -10px;
   font-size: 87.5px;
 }
 
-/* USER PROFILE PAGE */
-/*#profileCard {
-  margin: 700px 0 0 0 ;
-}*/
 
  .card {
     margin-top: 20px;
