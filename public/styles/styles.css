@@ -211,6 +211,7 @@ margin: -80px 450px -10px;
     -webkit-border-radius:0 !important;
 }
 .unearned {
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.85;
 }

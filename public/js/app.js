@@ -26,6 +26,11 @@ app.config(function($routeProvider){
     templateUrl: 'public/views/profile.html',
     controller: 'rewardControl'
   });
+
+  $routeProvider.when('/view6', {
+    templateUrl: 'public/views/proPhoto/proView.html',
+    controller: 'photoControl'
+  });
 });
 
 
