@@ -211,3 +211,10 @@ margin: -80px 450px -10px;
 .btn-pref .btn {
     -webkit-border-radius:0 !important;
 }
+.unearned {
+  filter: grayscale(100%);
+  opacity: 0.85;
+}
+ .my-modal {
+            width: 408px;
+}
