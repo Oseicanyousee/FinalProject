@@ -10,7 +10,6 @@ angular.module('tourApp')
         };
         
         $scope.checkIn = function(){
-        	$scope.profileBadges = [];
 			mapService.then(function(data){
 				console.log(data);
 			});
@@ -31,8 +30,13 @@ angular.module('tourApp')
 
 								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
     								// console.log('i am working');
-    								var successCheckIn = true;
-    								console.log(cords);
+    								// $scope.checkInStatus = profileService.setStatus();
+    								// $scope.newBadge = profileService.getBadge();
+    								var addBadge = function(currentBadge){
+										profileService.addBadge(currentBadge);
+										profileService.addBadge = currentBadge;
+									};
+    								console.log(addBadge);
     								console.log(target);
     						// 			target.lng = -83.049911;
 										// target.lat = 45.335706;

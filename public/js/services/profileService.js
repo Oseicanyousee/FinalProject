@@ -1,17 +1,29 @@
 angular.module('tourApp')
 	.factory('profileService', function(){
 		var profileBadges = [];
-		return {
-			saveBadges: function(){
-					if(successCheckIn  === true){
-						console.log('pushing image');
-						profileBadges.push("public/images/grandcircus.png");
-						console.log(profileBadges);
-					} else 
-						console.log('I didnt work');
-						},
-			getBadges: function(){
-				return profileBadges;
-			}		
+		// var badgeAquired = function(badge){
+		// 	profileBadges.push(badge);
+		// }
+
+		 // var updateBadges = function() {
+   //      for (var index = 0; index < profileBadges.length; ++index)
+   //          profileBadges[index].badge();
+   //  }
+
+		// var checkInStatus = {
+		// 	value: true
+		// };
+		var addBadge = function(newBadge){
+			profileBadges = newBadge;
+			// updateBadges();
+			profileBadges.push(newBadge);
 		}
+		var getBadge = function(){
+			return profileBadges;
+		};
+		return {
+			// badgeAquired: badgeAquired,
+			addBadge: addBadge,
+			getBadge: getBadge
+			};		
 	});
