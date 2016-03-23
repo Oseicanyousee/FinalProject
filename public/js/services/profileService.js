@@ -1,35 +1,51 @@
 angular.module('tourApp')
 	.factory('profileService', function(){
-		var profileBadges = [];
-		// var badgeAquired = function(badge){
-		// 	profileBadges.push(badge);
-		// }
+		var profileBadges = [
+			{
+				src: "public/images/grandcircus.png",
+				name: "Grand Circus",
+				owned: false
+			},
+			{
+				src: "/public/images/superhero.png",
+				name: "Superhero Alley",
+				owned: false
+			},
+			{
+				src: "/public/images/national.png",
+				name: "Grand Circus",
+				owned: false
+			},
+			{
+				src: "/public/images/guardian.png",
+				name: "Grand Circus",
+				owned: false
+			},
+			{
+				src: "/public/images/belt.png",
+				name: "Grand Circus",
+				owned: false
+			},
+			{
+				src: "/public/images/hart.png",
+				name: "Grand Circus",
+				owned: false
+			}
 
-		 // var updateBadges = function() {
-   //      for (var index = 0; index < profileBadges.length; ++index)
-   //          profileBadges[index].badge();
-   //  }
-
-		// var checkInStatus = {
-		// 	value: true
-		// };
-		var addBadge = function(newBadge){
-			profileBadges = newBadge;
-			// updateBadges();
-			profileBadges.push(newBadge);
+		];
+	
+		var addBadge = function(){
+			profileBadges[0].owned = true;
 		}
-<<<<<<< HEAD
-		var getBadge = function(){
+		var getBadges = function(){
 			return profileBadges;
 		};
 		return {
-			// badgeAquired: badgeAquired,
 			addBadge: addBadge,
-			getBadge: getBadge
+			getBadges: getBadges
 			};		
 	});
-=======
-	});
+
 
 $(document).ready(function() {
 $(".btn-pref .btn").click(function () {
@@ -38,4 +54,3 @@ $(".btn-pref .btn").click(function () {
     $(this).removeClass("btn-default").addClass("btn-primary");   
 });
 });
->>>>>>> db3e5e4e64664cca571cd169aa952021422d7147

@@ -1,5 +1,8 @@
 angular.module('tourApp')
-    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService','profileService', function ($scope, adventureService, mapService, profileService) {
+    .controller('mapCTRL', ['$scope', 'adventureService', 'mapService','profileService','$uibModal', function ($scope, adventureService, mapService, profileService,$uibModal) {
+							var target = {};
+								target.lng = -83.049911;
+								target.lat = 42.335706;
                $scope.showModal = false;
              $scope.toggleModal = function(){
         $scope.showModal = !$scope.showModal;
@@ -21,31 +24,28 @@ angular.module('tourApp')
 					options.enableHighAccuracy = true;
 						function success(position) {      
 							var cords = {};
-							var target = {};
 								cords.lng = position.coords.longitude;
 								cords.lat  = position.coords.latitude;
 								// cords.acc = position.coords.accuracy;
-								target.lng = -83.049911;
-								target.lat = 42.335706;
 
 								if(Math.abs(cords.lat - target.lat) <= 0.0005 && (Math.abs(cords.lng - target.lng)<= 0.0005)){
-    								// console.log('i am working');
-    								// $scope.checkInStatus = profileService.setStatus();
-    								// $scope.newBadge = profileService.getBadge();
-    								var addBadge = function(currentBadge){
-										profileService.addBadge(currentBadge);
-										profileService.addBadge = currentBadge;
-									};
-    								console.log(addBadge);
-    								console.log(target);
-    						// 			target.lng = -83.049911;
-										// target.lat = 45.335706;
-    								alert('You are checked in!!')	
-    								// return toggleModal;
+    									profileService.addBadge();
+							    var modalInstance = $uibModal.open({
+							      templateUrl: 'public/views/modal/successModal.html',
+							      controller: 'mapCTRL',
+							      size: 'Lg',
+							      // windowClass: 'my-modal'
+							    });
+    									target.lng = -83.049911;
+										target.lat = 45.335706;
+    								// alert('You are checked in!!');	
 								} else {
-									alert('you have not checked in');
-									console.log(cords);
-								}
+									var modalInstance = $uibModal.open({
+							      templateUrl: 'public/views/modal/failModal.html',
+							      controller: 'mapCTRL',
+							      size: 'Lg'
+							    	});
+								};
       						};
         		navigator.geolocation.getCurrentPosition(success, error, options);
         }; 	

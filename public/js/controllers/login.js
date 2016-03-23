@@ -1,7 +1,7 @@
 angular.module('tourApp')
   .controller('FBController',['$scope',function($scope){
-    var profile;
-    $scope.profile.name = profile.getName();
+    // var profile;
+    // $scope.profile.name = profile.getName();
 
     }]);
 

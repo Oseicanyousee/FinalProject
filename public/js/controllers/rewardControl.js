@@ -1,10 +1,8 @@
 angular.module('tourApp')
 	.controller("rewardControl",['$scope','profileService', function($scope, profileService){
-			profileService.addBadge();
-			$scope.badge = function(){
-			$scope.currentBadge = profileService.getBadge();
+			// profileService.addBadge();
+			$scope.badges = profileService.getBadges();
 				
-			}
 			// $scope.callToAddBadge = function(currentBadge){
 			// 	profileService.addBadge(currentBadge);
 			// };
@@ -23,8 +21,7 @@ angular.module('tourApp')
 		// 	$scope.getBadges();
 		// 	console.log('reward control is doing something');
 		// };
-	}]);
-		$scope.getBadges = getBadges();
+		// $scope.getBadges = getBadges();
 	}]);
 	
 	$(document).ready(function() {

@@ -47,11 +47,11 @@
 
         </div>
         <div class="tab-pane fade in" id="tab2">
-          <div ng-repeat="profileBadge in profileBadges">{{profileBadge}}</div>
-		<img class="profileBadge" src="./public/images/guardian.png">
-		<img class="profileBadge" src="./public/images/superhero.png">
-		<img class="profileBadge" src="./public/images/national.png">
-		<img class="profileBadge" src="./public/images/hart.png">
+          <!-- <div ng-repeat="profileBadge in profileBadges">{{profileBadge}}</div> -->
+		<img class="profileBadge" ng-repeat="badge in badges" ng-src="{{badge.src}}" ng-class="{unearned: !badge.owned}">
+		<!-- <img class="profileBadge" src="/public/images/superhero.png">
+		<img class="profileBadge" src="/public/images/national.png">
+		<img class="profileBadge" src="/public/images/hart.png"> -->
         </div>
         <div class="tab-pane fade in" id="tab3">
           <h3>This is tab 3</h3>
