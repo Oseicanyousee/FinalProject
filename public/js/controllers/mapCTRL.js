@@ -8,6 +8,11 @@ angular.module('tourApp')
         $scope.showModal = !$scope.showModal;
          };  
 
+         	$scope.ok = function () {
+    		$scope.$close();
+  			};
+
+
         $scope.callback = function (map) {
         map.setView([42.3317856, -83.0487986], 16.12);
         };
@@ -33,9 +38,10 @@ angular.module('tourApp')
 							    var modalInstance = $uibModal.open({
 							      templateUrl: 'public/views/modal/successModal.html',
 							      controller: 'mapCTRL',
-							      size: 'sm',
+							      size: 'sm'
 							      // windowClass: 'my-modal'
 							    });
+
     									target.lng = -83.049911;
 										target.lat = 45.335706;
     								// alert('You are checked in!!');	
