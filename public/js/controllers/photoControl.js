@@ -14,3 +14,4 @@ angular.module('tourApp')
     Lightbox.openModal($scope.images, index);
   };
 	}]);
+

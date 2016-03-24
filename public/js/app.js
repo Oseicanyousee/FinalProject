@@ -9,7 +9,7 @@ app.config(function($routeProvider){
 
   $routeProvider.when('/view2', {
     templateUrl: 'public/views/adventureList.html',
-    controller: 'directControl'
+    controller: 'adventureList'
   });
 
   $routeProvider.when('/view3', {
