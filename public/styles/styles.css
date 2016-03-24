@@ -1,3 +1,8 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 iframe {
   border: 1px;
 }
@@ -267,3 +272,23 @@ a {
   transform: rotate(180deg);
   display: inline-block;
 } 
+
+.photoTitle {
+  font-family:'OstrichSansMedium';
+  text-align: center;
+  font-size: 62px;
+}
+
+.photoButton {
+  margin-top: 10px;
+  margin-left: 550px;
+}
+
+#photoDiv {
+  text-align: center;
+}
+
+.legend {
+  font-size: 30px;
+  font-style: bold;
+}
