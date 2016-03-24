@@ -121,7 +121,7 @@ iframe {
 #miniTitle {
 font-family: 'OstrichSansLight';
 font-size: 100px;
-margin: -80px 450px -10px;
+margin: -80px 500px -10px;
 /*position: relative;*/
 /*z-index: 100;*/
 }
@@ -244,8 +244,10 @@ a {
   display: block;
   margin: 5px;
   text-align: center;
+  font-size: 20px;
+  color: black;
   float: left;
-  opacity: 0.5;
+  /*opacity: 0.5;*/
   font-family: arial;
   font-style: bold;
 }
@@ -302,4 +304,8 @@ a {
 .modal-body img {
   margin:0 auto;
   width: 300px;
-}            
+}   
+
+#my-signin2 {
+  margin-left: 27em;
+}         
