@@ -38,8 +38,8 @@ angular.module('tourApp')
 							    var modalInstance = $uibModal.open({
 							      templateUrl: 'public/views/modal/successModal.html',
 							      controller: 'mapCTRL',
-							      size: 'sm'
-							      // windowClass: 'my-modal'
+							      size: 'sm',
+							      class: 'modal-content-success'
 							    });
 
     									target.lng = -83.049911;

@@ -264,11 +264,15 @@ a {
   filter: grayscale(100%);
   opacity: 0.85;
 }
- .my-modal {
-            width: 408px;
+ .modal-content, .modal-content-success, .modal-body {
+  width: 330px;
+  height: 380px;
+}
+.modal-body h3 {
+  margin:auto;
 }
 
- {
+{
   transform: rotate(180deg);
   display: inline-block;
 } 
@@ -292,3 +296,8 @@ a {
   font-size: 30px;
   font-style: bold;
 }
+
+.modal-body img {
+  margin:0 auto;
+  width: 300px;
+}            
