@@ -245,18 +245,45 @@ a {
   margin: 5px;
   text-align: center;
   font-size: 20px;
-  color: black;
   float: left;
   /*opacity: 0.5;*/
-  font-family: arial;
-  font-style: bold;
+  font-family: 'Open sans', sans-serif;
 }
-.yellow { background: #fdd22a; }
-.blue { background: #009fe3; }
-.purple { background: #574696; }
-.orange { background: #ee7202; }
-.pink { background: #e61c67; }
-.green { background: #96c11f; }
+
+.menu a:hover{
+  text-decoration: none;
+  color: white;
+}
+.yellow { 
+  background: #fdd22a; 
+  color: purple;
+  font-weight: bold;
+}
+.blue { 
+  background: #009fe3; 
+  color: black;
+  font-weight: bold;
+}
+.purple {
+ background: #574696; 
+ color: white;
+ font-weight: bold;
+}
+.orange {
+ background: #ee7202;
+ color: blue;
+ font-weight: bold;
+  }
+.pink { 
+  background: #e61c67; 
+  color: white;
+  font-weight: bold;
+}
+.green { 
+  background: #96c11f; 
+  color: white;
+  font-weight: bold;
+}
 
 #adventTitle {
   /*position: center;*/
@@ -311,5 +338,11 @@ a {
 }    
 
 #checkinButton {
-  margin-left: 500px;
+  margin-left: 275px;
+  width: 275px;
+  height: 75px;
 }    
+
+#mapAlign {
+  left: 200px;
+}
