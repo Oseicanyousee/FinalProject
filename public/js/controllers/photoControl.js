@@ -1,12 +1,17 @@
 angular.module('tourApp')
-	.controller("photoControl", function($scope){
-			// var hideModal = function(){
-			// 	// $('#product-options').modal('hide');
-			// 	angular.element('.modal').css('display', 'none');// to hide the modal
-			// };
-			$(function() {
-    $( "#button" ).click(function() {
-      $( "#effect" ).toggleClass( "newClass", 1000 );
-    });
-  });
-	});
+	.controller("photoControl", ["$scope", "Lightbox", function($scope, Lightbox){
+			$scope.images = [
+    {
+      'url': './public/images/darcy.jpg',
+      'thumbUrl': './public/images/darcyThumb.jpg',
+      'caption': 'Selfie Example'
+    },
+    {
+      'url': './public/images/brodrick.jpg',
+      'thumbUrl': './public/images/brodrickThumb.jpg'
+    }];
+    $scope.openLightboxModal = function (index) {
+    Lightbox.openModal($scope.images, index);
+  };
+	}]);
+
