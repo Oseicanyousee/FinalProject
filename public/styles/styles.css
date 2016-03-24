@@ -240,7 +240,9 @@ a {
   margin: 5px;
   text-align: center;
   float: left;
-  opacity: 0.3;
+  opacity: 0.5;
+  font-family: arial;
+  font-style: bold;
 }
 .yellow { background: #fdd22a; }
 .blue { background: #009fe3; }
